@@ -1,8 +1,7 @@
-#!/usr/bin/env python
-import os
+from pathlib import Path
 import sys
 
-sys.path.append(os.curdir)
+sys.path.append(str(Path(__file__).parent))
 from pelicanconf import *  # noqa: F403
 
 SITEURL = "https://blog.grayvines.com"

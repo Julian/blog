@@ -3,6 +3,9 @@ from pathlib import Path
 import nox
 
 ROOT = Path(__file__).parent
+PELICAN = ROOT / "pelican"
+OUTPUT = ROOT / "output"
+
 REQUIREMENTS = dict(
     main=ROOT / "requirements.txt",
 )
@@ -24,6 +27,40 @@ def session(default=True, python=LATEST, **kwargs):  # noqa: D103
         return nox.session(python=python, **kwargs)(fn)
 
     return _session
+
+
+@session(default=False)
+def develop(session):
+    session.install("-r", REQUIREMENTS["main"])
+    session.run("pelican", "-s", PELICAN / "pelicanconf.py", *session.posargs)
+
+
+@session(default=False)
+def build(session):
+    session.install("-r", REQUIREMENTS["main"])
+    session.run(
+        "pelican",
+        "-s",
+        PELICAN / "publishconf.py",
+        "--fatal",
+        "warnings",
+        *session.posargs,
+    )
+
+
+@session()
+def audit(session):
+    """
+    Audit dependencies for vulnerabilities.
+    """
+    session.install("pip-audit", "-r", REQUIREMENTS["main"])
+    session.run("python", "-m", "pip_audit")
+
+
+@session(default=False)
+def ui(session):
+    session.install("twisted")
+    session.run("twist", "web", "--path", OUTPUT)
 
 
 @session(default=False)
