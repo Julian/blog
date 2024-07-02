@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pico.min.css" />
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
+
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  {% endblock head %}
+</head>
+
+<body>
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <div class="container">
+      {% for social, url in SOCIAL|sort %}
+      <a rel="me" href="{{ url }}" target="_blank">
+        <span class="tooltip"><i class="fab fa-{{ social }}"></i></span>
+      </a>
+      {% endfor %}
+
+      {% if FEED_ALL_RSS %}
+        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" title="{{ SITENAME }} RSS Feed">
+          <span class="tooltip"><i class="fas fa-rss"></i></span>
+        </a>
+      {% endif %}
+
+      <section>&copy; <a href="{{ GITHUB_URL }}">{{ AUTHOR }}</a> 2024</section>
+    </div>
+  </footer>
+</body>
+</html>
