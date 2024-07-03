@@ -21,22 +21,20 @@
     {% endblock %}
   </main>
 
-  <footer>
-    <div class="container">
-      {% for social, url in SOCIAL|sort %}
-      <a rel="me" href="{{ url }}" target="_blank">
-        <span class="tooltip"><i class="fab fa-{{ social }}"></i></span>
+  <footer class="container">
+    {% for social, url in SOCIAL|sort %}
+    <a rel="me" href="{{ url }}" target="_blank">
+      <span class="tooltip"><i class="fab fa-{{ social }}"></i></span>
+    </a>
+    {% endfor %}
+
+    {% if FEED_ALL_RSS %}
+      <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" title="{{ SITENAME }} RSS Feed">
+        <span class="tooltip"><i class="fas fa-rss"></i></span>
       </a>
-      {% endfor %}
+    {% endif %}
 
-      {% if FEED_ALL_RSS %}
-        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" title="{{ SITENAME }} RSS Feed">
-          <span class="tooltip"><i class="fas fa-rss"></i></span>
-        </a>
-      {% endif %}
-
-      <section>&copy; <a href="{{ GITHUB_URL }}">{{ AUTHOR }}</a> 2024</section>
-    </div>
+    <section>&copy; <a href="{{ GITHUB_URL }}">{{ AUTHOR }}</a> 2024</section>
   </footer>
 </body>
 </html>
