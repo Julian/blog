@@ -32,7 +32,13 @@ def session(default=True, python=LATEST, **kwargs):  # noqa: D103
 @session(default=False)
 def develop(session):
     session.install("-r", REQUIREMENTS["main"])
-    session.run("pelican", "-s", PELICAN / "pelicanconf.py", *session.posargs)
+    session.run(
+        "pelican",
+        "--delete-output-directory",
+        "-s",
+        PELICAN / "pelicanconf.py",
+        *session.posargs,
+    )
 
 
 @session(default=False)
