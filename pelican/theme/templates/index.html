@@ -2,6 +2,7 @@
 {% block content %}
 <div class="container">
   {% for article in articles_page.object_list %}
+
   <article>
     <header>
       <h1>
@@ -19,7 +20,7 @@
 
     <section>
       {{ article.summary }}
-    </section><!-- /.entry-excerpt -->
+    </section>
 
     <footer>
       {% if article.tags %}
@@ -33,6 +34,7 @@
       {% endif %}
     </footer>
   </article>
+
   {% endfor %}
 
   {% if articles_page.has_other_pages() %}
