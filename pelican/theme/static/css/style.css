@@ -4,7 +4,7 @@
 
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: 'Inter var', sans-serif;
+    --pico-font-family: 'Inter var', sans-serif;
   }
 }
 
@@ -19,4 +19,9 @@ h1 {
 
 h1 > a {
   --pico-text-decoration: none;
+}
+
+article {
+  --pico-block-spacing-vertical: 2rem;
+  --pico-block-spacing-horizontal: 2rem;
 }
