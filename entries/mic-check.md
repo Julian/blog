@@ -1,6 +1,4 @@
-=========
-Mic Check
-=========
+Title: Mic Check
 
 Something may show up here!
 
