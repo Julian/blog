@@ -19,7 +19,7 @@ jobs:
       - name: Set up uv
         uses: hynek/setup-cached-uv@v2
       - name: Set up nox
-        uses: wntrblm/nox@2024.10.09
+        uses: wntrblm/nox@2025.02.09
 
       - name: Build the Site
         run: nox -s build -- -o ./output
