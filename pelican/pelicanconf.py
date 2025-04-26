@@ -11,7 +11,7 @@ SITESUBTITLE = ""
 
 TIMEZONE = "America/New_York"
 DEFAULT_DATE = "fs"
-DEFAULT_DATE_FORMAT = "%Y-%B-%d"
+DEFAULT_DATE_FORMAT = "%-d %B %Y"
 
 THEME = HERE / "theme"
 
@@ -23,7 +23,6 @@ SOCIAL = [
     ("github", GITHUB_URL),
     ("mastodon", "https://mastodon.social/@JulianWasTaken"),
     ("photos", "https://photos.grayvines.com/"),
-    ("instagram", "https://instagram.com/julianberman"),
 ]
 
 ARTICLE_URL = "{date:%Y}/{date:%m}/{date:%d}/{slug}/"
@@ -31,10 +30,6 @@ ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
 
 DRAFT_URL = "drafts/{date:%Y}/{date:%m}/{date:%d}/{slug}/"
 DRAFT_SAVE_AS = "drafts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
-
-AUTHOR_URL = "authors/{slug}/"
-AUTHOR_SAVE_AS = "authors/{slug}/index.html"
-AUTHORS_SAVE_AS = "authors/index.html"
 
 CATEGORY_URL = "categories/{slug}/"
 CATEGORY_SAVE_AS = "categories/{slug}/index.html"
