@@ -6,8 +6,7 @@ PATH = HERE.parent / "entries"
 AUTHOR = "Julian Berman"
 
 SITEURL = ""
-SITENAME = "@Julian"
-SITESUBTITLE = ""
+SITENAME = "Julian"
 
 TIMEZONE = "America/New_York"
 DEFAULT_DATE = "fs"
@@ -25,11 +24,11 @@ SOCIAL = [
     ("photos", "https://photos.grayvines.com/"),
 ]
 
-ARTICLE_URL = "{date:%Y}/{date:%m}/{date:%d}/{slug}/"
-ARTICLE_SAVE_AS = "{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
+ARTICLE_URL = "{slug}/"
+ARTICLE_SAVE_AS = "{slug}/index.html"
 
-DRAFT_URL = "drafts/{date:%Y}/{date:%m}/{date:%d}/{slug}/"
-DRAFT_SAVE_AS = "drafts/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html"
+DRAFT_URL = "drafts/{slug}/"
+DRAFT_SAVE_AS = "drafts/{slug}/index.html"
 
 CATEGORY_URL = "categories/{slug}/"
 CATEGORY_SAVE_AS = "categories/{slug}/index.html"
