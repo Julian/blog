@@ -55,8 +55,9 @@ def build(session):
 def ui(session):
     session.run(
         "uv",
-        "--with=twisted",
         "run",
+        "--active",
+        "--with=twisted",
         "twist",
         "web",
         "--path",
