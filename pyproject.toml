@@ -1,0 +1,10 @@
+[project]
+name = "blog"
+version = "2025.4.1"
+description = "Julian"
+requires-python = ">=3.13"
+dependencies = [
+  "markdown",
+  "pelican",
+  "typogrify",
+]
