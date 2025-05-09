@@ -4,6 +4,10 @@
   --pico-line-height: 1.4;
 }
 
+.container {
+  padding-top: 0;
+}
+
 h1 {
   --pico-font-weight: 100;
 }
@@ -19,4 +23,10 @@ article {
   padding-right: 5rem;
   margin: auto;
   max-width: 900px;
+}
+
+article > header {
+  float: left;
+  background-color: inherit;
+  margin-right: 2rem;
 }
