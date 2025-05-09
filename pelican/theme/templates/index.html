@@ -21,24 +21,8 @@
     <section>
       {{ article.summary }}
     </section>
-
-    <footer>
-      {% if article.tags %}
-      <span>
-        <i class="fa fa-tag"></i>
-        {% set comma = joiner(", ") %}
-        {% for tag in article.tags %}
-        {{ comma() }}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-        {% endfor %}
-      </span>
-      {% endif %}
-    </footer>
   </article>
 
   {% endfor %}
-
-  {% if articles_page.has_other_pages() %}
-  {% include 'pagination.html' %}
-  {% endif %}
 </div>
 {% endblock content %}
