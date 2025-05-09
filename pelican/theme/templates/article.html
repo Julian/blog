@@ -41,38 +41,19 @@
     {{ article.content }}
   </section>
 
-  <hr>
+  {% if article.modified and article.modified != article.date %}
+    <hr>
 
-  <footer>
-    <section>
-      <section>
-        <time datetime="{{ article.date.isoformat() }}">
-          {{ article.locale_date }}
-        </time>
-      </section>
-      {% if article.modified and article.modified != article.date %}
-      <p>
-      <time datetime="{{ article.modified.isoformat() }}">
-        Modified on {{ article.locale_modified }}
-      </time>
-      </p>
-      {% endif %}
-    </section>
+    <footer>
+        <section>
+          <p>
+          <time datetime="{{ article.modified.isoformat() }}">
+            Modified on {{ article.locale_modified }}
+          </time>
+          </p>
+        </section>
+    </footer>
+  {% endif %}
 
-    <section>
-      {% if article.category %}
-      <div>
-        Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-      </div>
-      {% endif %}
-      {% if article.tags %}
-      <span>
-        {% for tag in article.tags %}
-        <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-        {% endfor %}
-      </span>
-      {% endif %}
-    </section>
-  </footer>
 </article>
 {% endblock content %}
