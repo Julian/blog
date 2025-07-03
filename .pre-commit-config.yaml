@@ -11,18 +11,18 @@ repos:
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.7.0"
+    rev: "v0.12.2"
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
   - repo: https://github.com/psf/black
-    rev: 24.10.0
+    rev: 25.1.0
     hooks:
       - name: black
         id: black
         args: ["--line-length", "79"]
   -   repo: https://github.com/rstcheck/rstcheck
-      rev: 'v6.2.4'
+      rev: 'v6.2.5'
       hooks:
       -   id: rstcheck
           args: [--report-level=warning]
