@@ -32,7 +32,7 @@ jobs:
         run: uvx nox -s build -- -o ./output
 
       - name: Upload an Artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./output
 
